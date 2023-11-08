@@ -8,7 +8,20 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.10"
 psutil = "^5.9.6"
+platformdirs = "^3.11.0"
+inspy-logger = "3.0.dev1"
+paho-mqtt = "^1.6.1"
+chime = "^0.7.0"
+pysimplegui = "^4.60.5"
+cryptography = "^41.0.5"
 
+
+[tool.poetry.group.dev.dependencies]
+ptipython = "^1.0.1"
+
+
+[tool.poetry.group.docs.dependencies]
+sphinx = "^7.2.6"
 
 [build-system]
 requires = ["poetry-core"]

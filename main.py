@@ -1,16 +1,14 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from mqtt_stat import MQTTClient
+from mqtt_stat.config import config
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+def main(broker=None, port=None, topic=None, reply_topic=None, birth_topic=None, lwt_topic=None):
+    broker = broker or config['mqtt_broker']
+    port = port or config['mqtt_port']
+    topic = topic or config['system_status_topic']
+    reply_topic = reply_topic or config['reply_topic']
+    birth_topic = birth_topic or config['birth_topic']
+    lwt_topic = lwt_topic or config['lwt_topic']
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    client = MQTTClient(broker, port, topic, reply_topic, birth_topic, lwt_topic)
+    client.run()

@@ -1,0 +1,10 @@
+{
+
+    "mqtt_broker": "localhost",
+    "mqtt_port": 1883,
+    "system_status_topic": "computer/status",
+    "lwt_topic": "computer/lwt",
+    "birth_topic": "computer/birth",
+    "check_interval": 5
+
+}
